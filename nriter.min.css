@@ -1,6 +1,0 @@
-/*!
-    * nriter.js v1.0.0 (https://github.com/nonehub/nriter.js)
-    * Copyright (c) 2021 none
-    * Licensed under MIT (https://github.com/nonehub/nriter.js/blob/main/LICENSE)
-*/
-.nriter-writ span{display:inline-block;-webkit-animation:fade-nriter 1s infinite;-moz-animation:fade-nriter 1s infinite;-o-animation:fade-nriter 1s infinite;animation:fade-nriter 1s infinite;vertical-align:middle}@-webkit-keyframes fade-nriter{0%{opacity:1}50%{opacity:0}100%{opacity:1}}@-moz-keyframes fade-nriter{0%{opacity:1}50%{opacity:0}100%{opacity:1}}@-o-keyframes fade-nriter{0%{opacity:1}50%{opacity:0}100%{opacity:1}}@keyframes fade-nriter{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
