@@ -1,16 +1,17 @@
 /*!
-    * nriter.js v1.0.0 (https://github.com/nonehub/nriter.js)
-    * Copyright (c) 2021 none
-    * Licensed under MIT (https://github.com/nonehub/nriter.js/blob/main/LICENSE)
-*/
-function writing(selector, text, speed, timeDelay) {
+ * nriter.js v1.0.1 (https://github.com/nonehub/nriter.js)
+ * Copyright (c) 2021 none
+ * Licensed under MIT (https://github.com/nonehub/nriter.js/blob/main/LICENSE)
+ */
+function writing(selector, text, speed, waiting, value) {
   selector = ".nriter-writ";
   for (let len = 0; len < document.querySelectorAll(selector).length; len++) {
     text = document.querySelectorAll(selector)[len];
     speed = document.querySelectorAll(selector)[len].getAttribute("data-speed");
-    timeDelay = document
+    waiting = document
       .querySelectorAll(selector)
-      [len].getAttribute("data-timedelay");
+      [len].getAttribute("data-waiting");
+    value = document.querySelectorAll(selector)[len].getAttribute("data-value");
     if (text == null) {
       text = ["you did not set a value for 'text,text'"];
     } else {
@@ -22,20 +23,21 @@ function writing(selector, text, speed, timeDelay) {
     if (speed == null) {
       speed = 500;
     }
-    if (timeDelay == null) {
-      timeDelay = 1000;
+    if (waiting == null) {
+      waiting = 1000;
+    }
+    if (value == null) {
+      value = "|";
     }
 
     /* Start Function Here */
     let mySelector = document.querySelectorAll(selector)[len],
-      mySelectorText = mySelector.textContent,
       arrayText = text,
       arrayNumber = 0,
       writingSpeed = speed,
-      timeDel = timeDelay;
+      timewit = waiting;
     let mySpan1 = document.createElement("span"),
-      mySpan1Text = document.createTextNode("|");
-    // mySpan2 = document.createElement("span");
+      mySpan1Text = document.createTextNode(value);
     mySpan1.appendChild(mySpan1Text);
     mySelector.appendChild(mySpan1);
 
@@ -53,7 +55,7 @@ function writing(selector, text, speed, timeDelay) {
           );
       document
         .querySelectorAll(`${selector}`)
-        [len].querySelector("span").style.animation = "none";
+        [len].querySelector("span").style.animation = "initial";
       // Check if the entire word has been deleted
       if (
         document.querySelectorAll(`${selector}`)[len].childNodes[0].textContent
@@ -81,7 +83,7 @@ function writing(selector, text, speed, timeDelay) {
         numberLength++;
         document
           .querySelectorAll(`${selector}`)
-          [len].querySelector("span").style.animation = "none";
+          [len].querySelector("span").style.animation = "initial";
         // Check if the whole word is displayed
         if (
           arrayNowText.length ==
@@ -97,27 +99,18 @@ function writing(selector, text, speed, timeDelay) {
           }
           document
             .querySelectorAll(`${selector}`)
-            [len].querySelector("span").style.animation =
-            "fade-now 1s infinite";
+            [len].querySelector("span")
+            .removeAttribute("style");
           // delay from one word to the next
           setTimeout(function () {
             removeText = setInterval(removeTextFunction, writingSpeed);
-          }, timeDel);
+          }, timewit);
         }
       }
     }
   }
 }
-/* 
- 
- writing("selector", ["text"], speed, timeDelay)
 
- :ex
-  writing("h1 span", ["Hi", "Good"], 50, 1000)
-
- require (selector, text)
-*/
-//writing(".writ-text", ["Definitions of what constitutes East Anglia vary.", "Good Job"],50,3000);
 window.onload = function () {
   writing();
 };
