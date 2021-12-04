@@ -1,6 +1,7 @@
 # nriter.js
 Simple writing effect.
 
+<br/>
 
 ## Usage
 
@@ -42,14 +43,15 @@ Example :
 
 
 
-### Customize
+## Customize
+<br/>
 
 
 **[[[[Speed]]]]**
 
-You can control the writing speed by adding `data-speed="numberHere"`.
+You can control typing speed by using `data-speed`.
 
-Speed is measured in milliseconds.
+measured in milliseconds.
 
 Example : 
 ```
@@ -61,7 +63,58 @@ Example :
       Text
     </h1>
 ```
+<br/>
+<br/>
+<br/>
 
 
-**[[[[Delay]]]]**
+**[[[[waiting]]]]**
 
+Waiting time from the current sentence until changing the sentence to the next sentence. 
+To control it use `data-waiting`.
+
+measured in milliseconds.
+
+Example : 
+```
+    <h1
+      class="nriter-writ"
+      data-text="TextHere"
+      data-waiting="1500" 
+    >
+      Text
+    </h1>
+```
+
+<br/>
+<br/>
+<br/>
+
+
+**[[[[value]]]]**
+
+To change a shape ( `|` ) to another shape, use `data-value`.
+
+Example : 
+```
+    <h1
+      class="nriter-writ"
+      data-text="TextHere"
+      data-value="+" 
+    >
+      Text
+    </h1>
+```
+
+<br/>
+
+
+## License
+[MIT License](https://github.com/nonehub/nriter.js/blob/main/LICENSE)
+
+By [none](https://github.com/nonehub)
+
+<br/>
+
+## Follow me
+[instagram](https://www.instagram.com/dev_none/)
