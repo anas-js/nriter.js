@@ -35,7 +35,6 @@ Example :
     <h1
       class="nriter-writ"
       data-text="TextHere,,TextHere"
-      data-speed="1500" 
     >
       Text
     </h1>
